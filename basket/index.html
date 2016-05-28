@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basket Statistic battle</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- my style -->
+    <link href="css/styles.css" rel="stylesheet">
+   
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html"><img  class="nav-brand" type="image/svg+xml" src="img/NBA_logo.svg"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                    <li><a href="#contestant">Contestants</a></li>
+                    <li><a href="#battle">Battle</a></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </nav>   
+                
+    
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12 col-sm-8">
+                    <h1>Basket Statistic Battle</h1>
+                    <p style="padding:20px;"></p>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                   
+                    <img src="img/vs2.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row row-content">
+            <div class="col-xs-12" id="battle">
+                <p style="padding:20px;"></p>
+                <h3 align="center">Stat Battle</h3>
+            </div>
+            <div class="col-xs-12 vs">
+                   <div class="col-xs-12 col-sm-4 col-sm-offset-1 battle">
+                   <img src="img/interrogative.png" id="player1" >
+                   </div>
+                   <div class="col-xs-12 col-sm-1"><p style="padding:50px;"></p>
+                   </div>
+                   <div class="col-xs-12 col-sm-4 col-sm-offset-1 battle">
+                   <img src="img/interrogative.png" id="player2" >
+                   </div>
+            </div>
+            <div class="col-xs-12">
+                <form>
+                    <div id='type' class="battle">
+                        <input type='radio' id='stat_1' name='stat' value='1' ><label for="stat_1">&nbsp;Points</label>
+                        <input type='radio' id='stat_2' name='stat' value='2' /><label for="stat_2">&nbsp;Rebounds</label>
+                        <input type='radio' id='stat_3' name='stat' value='3' /><label for="stat_3">&nbsp;Assists</label>
+                        <input type='radio' id='stat_4' name='stat' value='4' /><label for="stat_4">&nbsp;Player Impact Estimate</label> 
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12" class="battle">
+            <button type="button" class="btn btn-success btn-sm col-xs-5 col-xs-offset-1" onclick="battle();">Battle</button>
+            <button type="button" class="btn btn-default btn-sm col-xs-5" onclick="resetBattle();">Reset </button>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1" >
+            <p style="padding:10px;"></p>
+            <div id="alert" class="alert alert-warning alert-dismissible fade in" role="alert">
+              
+              <span>You should check in on some of those fields below.</span>
+            </div>
+            </div>
+        </div>
+
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-xs-12" id="contestant">
+                <h3 align="center">Today's contestants</h3>
+                <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="javascript:selectPlayer(1);">
+                        <img class="media-object img-thumbnail" id="contestant1"
+                         src="img/kevin_durant.png" alt="kevin durant">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">35 <span id="contestantName1">KEVIN DURANT</span></h2>
+                        <p class="desc">F / Oklahoma City Thunder
+<br>240 lbs / 6-9 <br>Age: 27, 241  <br>Born: 9/29/88  <br>Exp: 8 years
+                        </p> 
+<!-- PTS 28.2 REB 8.2 AST 5 PIE 19.4-->
+                        <div class="OKC"></div>
+                        <p><a class="btn btn-primary btn-xs" href="javascript:selectPlayer(1);">Select Player</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="javascript:selectPlayer(2);">
+                        <img class="media-object img-thumbnail" id="contestant2"
+                         src="img/kevin_love.png" alt="kevin love">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">0 <span id="contestantName2">KEVIN LOVE</span></h2>
+                        <p class="desc">F / Cleveland Cavaliers
+<br>251 lbs / 6-10  <br>Age: 27, 263 <br> Born: 9/7/88 <br> Exp: 7 years  
+<!-- PTS 16 REB 9.9 AST 2.4  PIE 14.3-->
+                        </p>
+                        <div class="CLE"></div>
+                        <p><a class="btn btn-primary btn-xs" href="javascript:selectPlayer(2);">Select Player</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="javascript:selectPlayer(3);">
+                        <img class="media-object img-thumbnail" id="contestant3"
+                         src="img/demar_derozan.png" alt="demar derozan">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">10 <span id="contestantName3">DEMAR DEROZAN</span></h2>
+                        <p  class="desc">G / Toronto Raptors
+<br>220 lbs / 6-7 <br>Age: 26, 294<br> Born: 8/7/89<br> Exp: 6 years  
+<!-- PTS 23.5 REB 4.5 AST 4 PIE 13.9-->
+                        </p>
+                        <div class="TOR"></div>
+                        <p><a class="btn btn-primary btn-xs" href="javascript:selectPlayer(3);">Select Player</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="javascript:selectPlayer(4);">
+                        <img class="media-object img-thumbnail" id="contestant4"
+                         src="img/dramond_green.png" alt="dramond_green">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">23 <span id="contestantName4">DRAYMOND GREEN</span></h2>
+                        <p  class="desc">F / Golden State Warriors
+<br>230 lbs / 6-7 <br>Age: 26, 084 <br>Born: 3/4/90 <br>Exp: 3 years  
+<!-- PTS 14  REB 9.5 AST 7.4 PIE 13.6-->
+                        </p>
+                        <div class="GSW"></div>
+                        <p><a class="btn btn-primary btn-xs" href="javascript:selectPlayer(4);">Select Player</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <footer class="row-footer" >
+        <div class="container">
+            <div class="row">             
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h5>Links </h5> 
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                    <h5>Contact </h5>
+                    Email : <a href="mailto:gottfredam@test.net">gottfredam@test.net</a>
+		        </div>
+                <div class="col-xs-12 col-sm-12">
+                    <p class="copyright">© Copyright 2016 Gottfredam</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootsrap-->
+    <script src="js/bootstrap.min.js"></script> 
+    <!-- my script -->
+    <script src="js/script.js"></script> 
+ </body></html>
