@@ -8,12 +8,6 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController ($scope) {
   $scope.checkedLunch = "";
 
-  
-  $scope.upper = function () {
-    var upCase = $filter('uppercase');
-    $scope.name = upCase($scope.name);
-  };
-
   $scope.checkLunch = function () {
   	$scope.checked=true;
   	var lunch = $scope.lunch;
