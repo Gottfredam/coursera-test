@@ -1,0 +1,32 @@
+<!--  order list
+<h3 ng-if="!list.emptyList()">{{ list.myTitle }}</h3>
+<ol>
+  <li ng-repeat="item in list.items">
+     {{ item.short_name }} - {{ item.name }} - Desc : {{ item.description }}
+    <button class="btn btn-default" ng-click="list.onRemove({index: $index});"><span class="glyphicon glyphicon-remove remove"></span> Don't want this one!</button>
+  </li>
+</ol>
+<div class="nothing" ng-if="list.emptyList()">Nothing found !</div>
+ -->
+ <!-- use bootstrat for display -->
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12" >
+                <h3 ng-if="!list.emptyList()">{{ list.myTitle }}</h3>
+        </div>
+	</div>
+    <div class="row row-content found" ng-repeat="item in list.items">
+        <div class="col-xs-1 col-md-1">{{ item.short_name }}
+        </div>
+        <div class="col-xs-3 col-md-3"> {{ item.name }}
+        </div>
+        <div class="col-xs-5 col-md-5">{{ item.description }}
+        </div>
+        <div class="col-xs-1 col-md-3">
+        <button class="btn btn-default" ng-click="list.onRemove({index: $index});" title="Don't want this one!"><span class="glyphicon glyphicon-remove remove"></span> <span class="hidden-xs">Don't want this one!</span></button>
+        </div>
+    </div>
+    <div class="row row-content">
+    	<div class="col-xs-12 nothing" ng-if="list.emptyList()">Nothing found !</div>
+    </div>
+</div>        
