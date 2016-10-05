@@ -1,0 +1,7 @@
+<span class="label label-warning"><a ui-sref="home">Home</a></span> &lt; <span class="label label-warning"><a ui-sref="categories">Categories</a></span> &lt; <span class="label label-success"><span class="badge">{{items.nb}}</span> {{items.name}} Menu </span>
+
+<h2 id="menu-categories-title" class="text-center">{{items.name}} Menu</h2>
+<div class="text-center">{{items.special_instructions}}</div>
+<items  cat="{{items.short_name}}" menuitems="items.items"></items>
+
+<ui-view></ui-view>
